@@ -1,0 +1,8 @@
+.heightAnimate{
+    animation: mymove 1s ease-in;
+}
+
+@keyframes mymove {
+    from {height: 50vh;}
+    to {height: 98vh;}
+  }
