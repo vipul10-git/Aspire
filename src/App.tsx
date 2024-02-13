@@ -10,7 +10,7 @@ function App() {
   const [height,setHeight]=useState(43);
   useEffect(()=>{
     const d = localStorage.getItem('cardData') as string;
-    if(!d.length){
+    if(!d?.length){
       localStorage.setItem('cardData',JSON.stringify([
         {
             name: 'Mark Henry',
