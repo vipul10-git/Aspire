@@ -25,7 +25,7 @@ function Header() {
                 </button>
             </div>
         </div>
-        {addNewCard && <AddNewCardModal/>}
+        {addNewCard && <AddNewCardModal closeModal={()=>setAddNewCard(false)}/>}
         </>
     )
 }

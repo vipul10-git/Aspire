@@ -42,7 +42,7 @@ function Card() {
 
   useEffect(() => {
     const d = localStorage?.getItem?.('cardData') as string;
-    setCardDetail(d.length ? JSON.parse(d) : []);
+    setCardDetail(d?.length ? JSON.parse(d) : []);
   }, []);
 
   const handleNext = (step: number) => {
