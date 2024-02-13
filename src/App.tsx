@@ -9,29 +9,33 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 function App() {
   const [height,setHeight]=useState(43);
   useEffect(()=>{
-    localStorage.setItem('cardData',JSON.stringify([
-      {
-          name: 'Mark Henry',
-          cardNumber: '1234 5678 1234',
-          ex: '12 / 20',
-          cvv: '30',
-          freeze:true
-      },
-      {
-          name: 'Sam Alexander',
-          cardNumber: '1234 5678 1235',
-          ex: '12/20',
-          cvv: '30',
-          freeze:false
-      },
-      {
-          name: 'Henry Alexander',
-          cardNumber: '1234 5678 1290',
-          ex: '06/27',
-          cvv: '30',
-          freeze:false
-      },
-  ]))
+    const d = localStorage.getItem('cardData') as string;
+    if(!d.length){
+      localStorage.setItem('cardData',JSON.stringify([
+        {
+            name: 'Mark Henry',
+            cardNumber: '1234 5678 1234',
+            ex: '12 / 20',
+            cvv: '302',
+            freeze:true
+        },
+        {
+            name: 'Sam Alexander',
+            cardNumber: '1234 5678 1235',
+            ex: '12/20',
+            cvv: '301',
+            freeze:false
+        },
+        {
+            name: 'Henry Alexander',
+            cardNumber: '1234 5678 1290',
+            ex: '06/27',
+            cvv: '305',
+            freeze:false
+        },
+    ]))
+    }
+    
   },[])
   useLayoutEffect(()=>{
     setHeight(document.getElementById('aboveCard').clientHeight)
