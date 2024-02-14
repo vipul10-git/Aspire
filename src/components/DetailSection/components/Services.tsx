@@ -1,4 +1,3 @@
-import React from 'react';
 import DeactivateCard from '../../../assets/DeactivateCard.svg';
 import FreezeCard from '../../../assets/FreezeCard.svg';
 import ReplaceCard from '../../../assets/ReplaceCard.svg';

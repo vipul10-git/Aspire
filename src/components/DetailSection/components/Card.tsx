@@ -3,16 +3,9 @@ import eye from '../../../assets/eye.svg';
 import logoLight from '../../../assets/logoLight.svg';
 import Visa from '../../../assets/Visa.svg';
 import Freeze from '../../../assets/freeze.svg';
+import {CardType } from './types';
 
-type CardType = {
-  name: string;
-  cardNumber: string;
-  ex: string;
-  cvv: string;
-  freeze:boolean
-};
-
-const renderIndicator = (cardDetail: Card[], currentIndex: number, handleIndex: (k: number) => void) => (
+const renderIndicator = (cardDetail: CardType[], currentIndex: number, handleIndex: (k: number) => void) => (
   <div
     style={{
       display: 'flex',
@@ -87,7 +80,7 @@ function Card() {
         </div>
         <div id='3' className='absolute top-0 left-0 w-full h-full flex flex-row overflow-x-hidden'>
           {Children.toArray(cardDetail.map((i, index) => (
-            <div className='shrink-0 p-7 text-white bg-transparent w-full sm:w-[400px] h-[180px] sm:h-[205px] flex items-start flex-col justify-center' ref={index === currCard ? re : {}}>
+            <div className='shrink-0 p-7 text-white bg-transparent w-full sm:w-[400px] h-[180px] sm:h-[205px] flex items-start flex-col justify-center' ref={index === currCard ? re : undefined}>
               <div className='flex items-center justify-center mb-3 gap-1'>
                 <div className='text-2xl'>{i.name}</div>
                 {i.freeze === false ? <button onClick={() => freezeCard(i.cardNumber)} role='button'>

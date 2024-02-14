@@ -5,40 +5,20 @@ import FooterNavigation from './components/FooterNavigation';
 import MobileView from './components/DetailSection/MobileView';
 import DesktopView from './components/DetailSection/DesktopView';
 import { useEffect, useLayoutEffect, useState } from 'react';
+import {sampleCardData} from './helper';
 
 function App() {
-  const [height,setHeight]=useState(43);
+  const [height,setHeight]=useState(360);
+  
   useEffect(()=>{
     const d = localStorage.getItem('cardData') as string;
     if(!d?.length){
-      localStorage.setItem('cardData',JSON.stringify([
-        {
-            name: 'Mark Henry',
-            cardNumber: '1234 5678 1234',
-            ex: '12 / 20',
-            cvv: '302',
-            freeze:true
-        },
-        {
-            name: 'Sam Alexander',
-            cardNumber: '1234 5678 1235',
-            ex: '12/20',
-            cvv: '301',
-            freeze:false
-        },
-        {
-            name: 'Henry Alexander',
-            cardNumber: '1234 5678 1290',
-            ex: '06/27',
-            cvv: '305',
-            freeze:false
-        },
-    ]))
+      localStorage.setItem('cardData',JSON.stringify(sampleCardData))
     }
     
   },[])
   useLayoutEffect(()=>{
-    setHeight(document.getElementById('aboveCard').clientHeight)
+    document?.getElementById?.('aboveCard')?.clientHeight && setHeight(document?.getElementById?.('aboveCard')?.clientHeight || 360)
   },[])
   return (
     <>
