@@ -1,11 +1,11 @@
 import { useState } from "react";
-function generateNumberString() {
+function generateNumberString():string {
     const generateChunk = () => Math.floor(Math.random() * 10000).toString().padStart(4, '0');
   
     return Array.from({ length: 3 }, generateChunk).join(' ');
   
   }
-const AddNewCardModal = ({closeModal}:{closeModal:()=>void}) => {
+const AddNewCardModal = ({closeModal}:{closeModal:()=>void}):JSX.Element => {
     const [formVal,setFormVal] = useState('')
     const onSubmit = ()=>{
         const payload = {

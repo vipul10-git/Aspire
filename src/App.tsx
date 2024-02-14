@@ -7,7 +7,7 @@ import DesktopView from './components/DetailSection/DesktopView';
 import { useEffect, useLayoutEffect, useState } from 'react';
 import {sampleCardData} from './helper';
 
-function App() {
+function App():JSX.Element {
   const [height,setHeight]=useState(360);
   
   useEffect(()=>{

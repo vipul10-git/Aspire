@@ -13,7 +13,7 @@ const sideBarMenu = [
     { name: 'Credit', icon: Credit },
     { name: 'Settings', icon: Account },
 ]
-function SideBar() {
+function SideBar():JSX.Element {
     const [selectedSide,setSelectedSide] = useState('Cards')
     return (
         <div className='bg-[#0C365A] h-[100vh] p-12'>

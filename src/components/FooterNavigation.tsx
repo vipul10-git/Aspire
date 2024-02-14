@@ -12,7 +12,7 @@ const sideBarMenu = [
     { name: 'Credit', icon: Credit },
     { name: 'Settings', icon: Account },
 ]
-function FooterNavigation() {
+function FooterNavigation():JSX.Element {
     const [selectedSide,setSelectedSide] = useState('Cards')
     return (
         <div className='bg-white fixed bottom-0 left-0 h-16 w-full shadow-custom'>

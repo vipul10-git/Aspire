@@ -1,7 +1,7 @@
 import {useState} from 'react';
 const tabVal = ['My debit cards', 'All company cards'];
 
-function Tab() {
+function Tab():JSX.Element {
     const [selectedTab,setSelectedtab] = useState(tabVal[0])
 
     return (<div className='flex flex-row gap-4 pt-3 sm:pt-9 pb-[12px]'>

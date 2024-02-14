@@ -4,7 +4,7 @@ import './index.css'
 import Services from './components/Services';
 import TransactionDetails from './components/TransactionDetails';
 
-function DesktopView({ height }: { height: number }) {
+function DesktopView({ height }: { height: number }):JSX.Element {
     const cardHeight = window.innerHeight - height + 12
     const [open, setOpen] = useState(false)
     return (

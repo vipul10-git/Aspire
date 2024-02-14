@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import add from '../assets/add.svg';
 import AddNewCardModal from './AddNewCardModal'
-function Header() {
+function Header():JSX.Element {
     const [addNewCard, setAddNewCard] = useState(false);
 
     const handleAddNewCard = () => {

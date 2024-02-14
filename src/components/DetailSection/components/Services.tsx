@@ -27,7 +27,7 @@ const featureDetail = [
   },
 ];
 
-function Services() {
+function Services():JSX.Element {
   return (
     <div className='pt-5 m-0 pb-3 rounded-xl flex flex-row justify-between gap-2 px-7 h-fit sm:w-[330px] lg:w-[400px] bg-[#EDF3FF]'>
       {featureDetail.map((item, index) => (

@@ -5,7 +5,7 @@ import Visa from '../../../assets/Visa.svg';
 import Freeze from '../../../assets/freeze.svg';
 import {CardType } from './types';
 
-const renderIndicator = (cardDetail: CardType[], currentIndex: number, handleIndex: (k: number) => void) => (
+const renderIndicator = (cardDetail: CardType[], currentIndex: number, handleIndex: (k: number) => void):JSX.Element => (
   <div
     style={{
       display: 'flex',
@@ -27,7 +27,7 @@ const renderIndicator = (cardDetail: CardType[], currentIndex: number, handleInd
   </div>
 )
 
-function Card() {
+function Card():JSX.Element {
   const [showCard, setShowCard] = useState<number | null>(null);
   const [currCard, setCurrCard] = useState<number>(0);
   const re = useRef<HTMLDivElement>(null);

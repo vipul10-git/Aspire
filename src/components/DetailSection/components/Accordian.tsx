@@ -14,7 +14,7 @@ const iconType = {
 
 
 
-const Accordian: React.FC<AccordianProps> = ({ icon, title, data, isOpen, callBackOpen }) => {
+const Accordian: React.FC<AccordianProps> = ({ icon, title, data, isOpen, callBackOpen }):JSX.Element => {
     const [open, setOpen] = useState(isOpen);
 
     return (
