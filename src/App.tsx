@@ -23,14 +23,14 @@ function App() {
   return (
     <>
       <div className='flex flex-row font-["Open_Sans"] bg-[#0C365A] sm:bg-white'>
-        <div className='sm:block hidden'><SideBar /></div>
+        <div className='lg:block hidden'><SideBar /></div>
         <div id='aboveCard' className='sm:p-12 px-6 py-7  w-full'>
           <Header />
           <Tab />
           <div className='sm:block hidden'><DesktopView /></div>
           <div className='sm:hidden'><MobileView height={height}/></div>
         </div>
-        <div className='block sm:hidden'><FooterNavigation/></div>
+        <div className='block lg:hidden'><FooterNavigation/></div>
       </div>
     </>
   )

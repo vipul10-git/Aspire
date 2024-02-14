@@ -67,20 +67,20 @@ function Card() {
   }
 
   return (
-    <div className='flex flex-col gap-2 w-full sm:w-[400px]'>
+    <div className='flex flex-col gap-2 w-full xl:w-[400px] lg:w-[350]'>
       <div className='flex justify-end'>
         <div className='flex flex-row gap-2 cursor-pointer' role='button' onClick={() => setShowCard(currCard)}>
           <img src={eye} alt="eys" /><span className='text-[#01D167] text-sms'>Show card number</span>
         </div>
       </div>
       <div className='flex flex-row relative'>
-        <div id='2' className='bg-[#01D167] p-13 rounded-xl p-7 mb-1 flex flex-col text-white shrink-0 w-full sm:w-[400px] h-[180px] sm:h-[205px] justify-between'>
+        <div id='2' className='bg-[#01D167] p-13 rounded-xl p-7 mb-1 flex flex-col text-white shrink-0 w-full xl:w-[400px] lg:w-[350] aspect-video justify-between'>
           <div className='flex justify-end'><img src={logoLight} alt="logoLight" width='73px' height='20px' /></div>
           <div className='flex justify-end'><img src={Visa} alt="Visa" width='58px' height='15px' className='h-[16px]' /></div>
         </div>
         <div id='3' className='absolute top-0 left-0 w-full h-full flex flex-row overflow-x-hidden'>
           {Children.toArray(cardDetail.map((i, index) => (
-            <div className='shrink-0 p-7 text-white bg-transparent w-full sm:w-[400px] h-[180px] sm:h-[205px] flex items-start flex-col justify-center' ref={index === currCard ? re : undefined}>
+            <div className='shrink-0 p-7 text-white bg-transparent w-full xl:w-[400px] lg:w-[350] aspect-video flex items-start flex-col justify-center' ref={index === currCard ? re : undefined}>
               <div className='flex items-center justify-center mb-3 gap-1'>
                 <div className='text-2xl'>{i.name}</div>
                 {i.freeze === false ? <button onClick={() => freezeCard(i.cardNumber)} role='button'>
