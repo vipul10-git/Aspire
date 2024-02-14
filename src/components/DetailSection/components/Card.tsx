@@ -40,9 +40,20 @@ function Card() {
   const re = useRef<HTMLDivElement>(null);
   const [cardDetail, setCardDetail] = useState<CardType[]>([]);
 
-  useEffect(() => {
+  const handleAddNewCard = ()=>{
     const d = localStorage?.getItem?.('cardData') as string;
     setCardDetail(d?.length ? JSON.parse(d) : []);
+  }
+
+  useEffect(() => {
+      handleAddNewCard()
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('cardDataupdated',() => {
+      handleAddNewCard()
+    })
+    return ()=> window.removeEventListener('cardDataupdated',()=>handleAddNewCard())
   }, []);
 
   const handleNext = (step: number) => {
@@ -85,11 +96,11 @@ function Card() {
               </div>
               <div className='text-[14px] mb-2'>
                 {showCard === index ? <>{i.cardNumber} &nbsp;2020</>
-                  : <div className='flex flex-row gap-2 items-center'>{i.cardNumber.split('').map(i => {
+                  : <div className='flex flex-row gap-1 items-center'>{i.cardNumber.split('').map(i => {
                     if (i === ' ') {
-                      return (<div className='w-[4px] h-[4px]'></div>)
+                      return (<div className='w-[3px] h-[3px]'></div>)
                     } else {
-                      return (<div className='w-[6px] h-[6px] rounded-full bg-white'></div>)
+                      return (<div className='w-[5px] h-[5px] rounded-full bg-white'></div>)
                     }
                   })} &nbsp;2020</div>}
 

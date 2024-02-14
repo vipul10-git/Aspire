@@ -2,7 +2,7 @@ import { useState } from "react";
 function generateNumberString() {
     const generateChunk = () => Math.floor(Math.random() * 10000).toString().padStart(4, '0');
   
-    return Array.from({ length: 4 }, generateChunk).join(' ');
+    return Array.from({ length: 3 }, generateChunk).join(' ');
   
   }
 const AddNewCardModal = ({closeModal}:{closeModal:()=>void}) => {
@@ -12,12 +12,13 @@ const AddNewCardModal = ({closeModal}:{closeModal:()=>void}) => {
             name:formVal,
             cardNumber: generateNumberString(),
             freeze: false,
-            cvv: Math.floor(Math.random() * 100).toString(),
+            cvv: Math.floor(Math.random() * 1000).toString(),
             ex: '12/20'
         }
         const d = localStorage.getItem('cardData');
-        const updatedDate = [...JSON.parse(d),payload];
-        localStorage.setItem('cardData', JSON.stringify(updatedDate))
+        const updatedDate = d?.length ? [...JSON.parse(d),payload] : [payload];
+        localStorage.setItem('cardData', JSON.stringify(updatedDate));
+        window.dispatchEvent(new Event('cardDataupdated'))
         closeModal()
     }
   return (
