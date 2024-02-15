@@ -15,7 +15,7 @@ const sideBarMenu = [
 function FooterNavigation():JSX.Element {
     const [selectedSide,setSelectedSide] = useState('Cards')
     return (
-        <div className='bg-white fixed bottom-0 left-0 h-16 w-full shadow-custom'>
+        <footer className='bg-white fixed bottom-0 left-0 h-16 w-full shadow-custom'>
             <div className='flex justify-between px-4 flex-rows pt-2'>
                 {sideBarMenu.map(i => {
                     return <div className='flex gap-1 flex-col items-center justify-center' onClick={()=>setSelectedSide(i.name)}>
@@ -24,7 +24,7 @@ function FooterNavigation():JSX.Element {
                     </div>
                 })}
             </div>
-        </div>
+        </footer>
     )
 }
 

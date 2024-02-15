@@ -10,7 +10,7 @@ function Header():JSX.Element {
     
     return (
         <>
-        <div className='flex flex-col gap-2 justify-start'>
+        <header className='flex flex-col gap-2 justify-start'>
             <div className='pb-[2px] text-[14px] text-white sm:text-black'>Available balance</div>
             <div className='flex flex-row gap-2 items-center justify-between'>
                 <div className='flex flex-row gap-2 items-center'>
@@ -24,7 +24,7 @@ function Header():JSX.Element {
                     New card
                 </button>
             </div>
-        </div>
+        </header>
         {addNewCard && <AddNewCardModal closeModal={()=>setAddNewCard(false)}/>}
         </>
     )
